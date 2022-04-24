@@ -1,0 +1,28 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "short my url",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmebhawesh/shortmyurl.git"
+  },
+  "keywords": [
+    "url",
+    "shortener",
+    "short",
+    "url"
+  ],
+  "author": "bhawesh.me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callmebhawesh/shortmyurl/issues"
+  },
+  "homepage": "https://github.com/callmebhawesh/shortmyurl#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}

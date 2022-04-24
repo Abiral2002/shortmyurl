@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/callmebhawesh/shortmyurl#readme",
   "dependencies": {
+    "bulma": "^0.9.3",
     "flowbite": "^1.4.2",
     "tailwindcss": "^3.0.24"
   }

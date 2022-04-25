@@ -52,6 +52,7 @@ html {
 */
 
 body {
+  position: relative;
   margin: 0;
   /* 1 */
   line-height: inherit;
@@ -474,9 +475,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 
-footer {
+/* footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
+} */
+
+footer {
+  position:relative;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  text-align: center;
+  width:100%;
 }

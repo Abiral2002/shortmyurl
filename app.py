@@ -1,16 +1,16 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
-# from flask_wtf import wtforms
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, Length, ValidationError
+# from flask_login import UserMixin
+# from flask_wtf import FlaskForm
+# from wtforms import StringField, PasswordField, SubmitField
+# from wtforms.validators import InputRequired, Length, ValidationError
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.db'
 app.config["SECRET_KEY"] = 'aN&^Q7&47C2Qwv9kv2rCvzcPC5C982Sn$YFg%CW$'
 
-class User(db.Model, UserMixin):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.column(db.String(30))
     password = db.column(db.String(30))

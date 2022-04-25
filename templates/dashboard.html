@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
-
 {% block title %}
     Dashboard
 {% endblock title %}
-
-
+    
 {% block body %}
-<!-- card start here -->
+  <div class="container"> 
+<h1 class="display-1 text-center my-3">Paste <b>Long Link</b> Here.</h1>
+    <input class="input is-primary is-rounded is-large my-3 mx-auto" type="text" placeholder="https://www.youtube.com/watch?v=swHI1H7DVsQsjsjsjsjsjwisks">
 
-<!-- card end here -->
+<div class="buttons">
+  <button class="button is-success my-3 mx-auto">Generate Short URL</button>
+</div>
+
+<h1 class="display-5 text-center my-5">Use this <b>Short URL</b>.</h1>
+<div class="control">
+  <input class="input is-rounded is-primary my-3 is-large" type="text" value="sh.rt/uhjcr" readonly>
+</div>
+</div> 
 {% endblock body %}

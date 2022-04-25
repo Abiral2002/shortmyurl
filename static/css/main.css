@@ -472,3 +472,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 3.2rem;
     width: 3.2rem;
 }
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

@@ -1,9 +1,10 @@
+from enum import unique
+from datetime import datetime
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-# from flask_login import UserMixin
-# from flask_wtf import FlaskForm
-# from wtforms import StringField, PasswordField, SubmitField
-# from wtforms.validators import InputRequired, Length, ValidationError
+import string
+from random import choices
+
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
@@ -14,6 +15,28 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.column(db.String(30))
     password = db.column(db.String(30))
+
+class Link(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    original_url = db.Column(db.String(600))
+    short_url = db.Column(db.String(30), unique=True)
+    visits = db.Column(db.Integer, default=0)
+    date_created = db.Column(db.DateTime, default=datetime.now)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.short_url = self.generate_short_link()
+
+    def generate_short_link(self):
+        character = string.digits + string.ascii_letters
+        short_url = ''.join(choices(character, k=10))
+
+        link = self.query.filter_by(short_url=short_url).first()
+
+        if link:
+            return self.generate_short_link()
+        
+        return short_url
 
 @app.route('/')
 def index():
